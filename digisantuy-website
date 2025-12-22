@@ -33,15 +33,16 @@
 <!-- Header -->
 <header class="bg-white shadow-sm sticky top-0 z-40">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <div class="flex items-center space-x-2">
-      <div class="bg-blue-600 text-white rounded-lg p-2">
-        <!-- message icon -->
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </div>
-      <span class="text-xl font-bold text-gray-800">Digisantuy</span>
-    </div>
+    <div className="flex items-center space-x-3">
+     <img
+    src="/logo-digisantuy.svg"
+         alt="Digisantuy"
+    loading="lazy"
+    className="h-8 md:h-10 w-auto object-contain"
+    style={{ maxWidth: '200px' }}
+  />
+  <span className="text-xl font-bold text-gray-800">Digisantuy</span>
+</div>
 
     <nav class="hidden md:flex items-center space-x-8">
       <button id="btnAllServices" class="text-gray-700 hover:text-blue-600 font-medium transition">Semua Layanan</button>
