@@ -1,4 +1,4 @@
-# Digisantuy — Situs Statis (indeks.html)
+# Digisantuy — Situs Statis 
 
 Ringkasan  
 File `indeks.html` adalah halaman statis yang berisi landing page layanan "Digisantuy" (layanan akademik & karir). Halaman ini dibangun tanpa bundler: HTML + Tailwind via CDN + JavaScript murni (data dan interaksi di-*inline*). Cocok untuk di-publish langsung di GitHub Pages.
@@ -60,18 +60,3 @@ Troubleshooting singkat
 - Tampilan berantakan / Tailwind tidak jalan → pastikan koneksi CDN aktif dan tidak ada CSP yang memblokir.
 - Gambar placeholder rusak → URL placeholder menggunakan `https://placehold.co` (periksa kebijakan hotlink atau ganti dengan gambar Anda).
 - Countdown tidak muncul → tekan tombol "Lihat Semua Layanan" (fitur memicu countdown untuk promo).
-
-Lisensi
-- Anda bebas gunakan/ubah file untuk kebutuhan pribadi/proyek. Jika ingin saya tambahkan header lisensi (mis. MIT), beri tahu.
-
-Butuh bantuan selanjutnya?
-- Saya bisa:
-  - Mengubah nama `indeks.html` → `index.html` dan membuat commit/pull request untuk Anda (butuh akses repo / instruksi lebih lanjut).
-  - Menambahkan redirect `index.html` sederhana.
-  - Membuat versi ringan tanpa Tailwind (CSS murni) atau versi yang dioptimalkan untuk GitHub Pages.
-  - Menambahkan instruksi CI/CD atau workflow untuk auto-deploy (GitHub Actions).
-
-Kalau mau, beri tahu apakah Anda ingin:
-- Saya buatkan file `index.html` (rename) dan/atau
-- Contoh `index.html` redirect ke `indeks.html`, atau
-- README versi bahasa Inggris juga.
