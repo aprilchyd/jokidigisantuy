@@ -159,7 +159,7 @@
         <span id="promoTimer" class="ml-3 bg-amber-100 text-amber-800 text-sm font-medium px-3 py-1 rounded-full flex items-center hidden">
           <!-- clock icon -->
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="mr-1"><path d="M12 7v5l3 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
-          Promo Berakhir: <span id="countdownText" class="ml-1">05:00</span>
+          Promo Berakhir: <span id="countdownText" class="ml-1">1:05:00</span>
         </span>
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">Kami menyediakan berbagai layanan akademik dan karir untuk mendukung kesuksesan studi dan karier Anda</p>
@@ -185,6 +185,7 @@
 
     <!-- Filters -->
     <div class="flex flex-wrap justify-center gap-3 mb-6" id="categoryButtons">
+        
       <!-- buttons rendered by JS -->
     </div>
 
@@ -407,21 +408,27 @@
 <script>
 /* ========= DATA ========== */
 const services = [
-  { id:1, name:"Jurnal Kampus (Full Bab)", category:"Akademik", description:"Penulisan lengkap jurnal akademik siap publikasi di jurnal kampus", base_price:350000, duration_estimate:"5-7 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Jurnal+Kampus" },
-  { id:2, name:"Pembuatan Makalah & Artikel", category:"Akademik", description:"Rp3.000/halaman. Opsi: hanya setor judul & topik (+Rp15.000)", base_price:3000, duration_estimate:"1-3 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Makalah" },
-  { id:3, name:"Design PowerPoint Grafis", category:"Akademik", description:"Rp3.000/slide. Opsi: hanya setor judul & topik (+Rp15.000)", base_price:3000, duration_estimate:"1-2 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=PPT+Grafis" },
-  { id:4, name:"Laporan Kerja Lapangan", category:"Akademik", description:"Penulisan lengkap laporan praktik kerja lapangan/industri", base_price:250000, duration_estimate:"3-5 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Laporan+KL" },
-  { id:5, name:"Analisis Data SPSS", category:"Akademik", description:"Pengolahan dan analisis data menggunakan software SPSS", base_price:75000, duration_estimate:"1-2 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Analisis+Data" },
-  { id:6, name:"Pembuatan Lamaran Digital", category:"Akademik", description:"Desain lamaran kerja digital interaktif untuk portofolio", base_price:15000, duration_estimate:"1 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Lamaran+Digital" },
-  { id:7, name:"Pembuatan Skripsi (Bab 1-3)", category:"Tugas Akhir", description:"Penulisan bab pendahuluan, tinjauan pustaka, dan metodologi", base_price:650000, duration_estimate:"2-3 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Skripsi+Bab1-3" },
-  { id:8, name:"Pembuatan Skripsi (Bab 4-5)", category:"Tugas Akhir", description:"Penulisan bab hasil analisis dan kesimpulan", base_price:500000, duration_estimate:"2 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Skripsi+Bab4-5" },
-  { id:9, name:"Skripsi Full Package", category:"Tugas Akhir", description:"Full bab + analisis data + data lapangan (hanya serahin judul). Revisi 2x gratis.", base_price:3500000, duration_estimate:"4-6 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Skripsi+Full" },
-  { id:10, name:"Pembuatan Tesis (Bab 1-3)", category:"Tugas Akhir", description:"Penulisan bab pendahuluan, tinjauan pustaka, dan metodologi", base_price:550000, duration_estimate:"3-4 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Tesis+Bab1-3" },
-  { id:11, name:"Pembuatan Tesis (Bab 4-5)", category:"Tugas Akhir", description:"Penulisan bab hasil analisis dan kesimpulan", base_price:800000, duration_estimate:"3 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Tesis+Bab4-5" },
-  { id:12, name:"Tesis Full Package", category:"Tugas Akhir", description:"Full bab + analisis data + mix method + media (web/aplikasi) + data lapangan. Revisi 2x gratis.", base_price:5500000, duration_estimate:"8-12 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Tesis+Full" },
-  { id:13, name:"Bimbingan Tesis", category:"Tugas Akhir", description:"Pendampingan penuh dalam pengerjaan tesis dari proposal hingga sidang", base_price:0, duration_estimate:"Sesuai kebutuhan", image_url:"https://placehold.co/400x200/2563EB/white?text=Bimbingan+Tesis" },
-  { id:14, name:"Design CV ATS Friendly", category:"Karir", description:"CV profesional yang lolos sistem ATS (Applicant Tracking System)", base_price:35000, duration_estimate:"1 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=CV+Premium" },
-  { id:15, name:"Pembuatan Aplikasi Android/iOS", category:"Karir", description:"Pengembangan aplikasi mobile menggunakan Expo (belum rilis PlayStore/App Store). Harga negosiasi.", base_price:0, duration_estimate:"Diskusi", image_url:"https://placehold.co/400x200/2563EB/white?text=Aplikasi+Mobile" }
+  { id:1, name:"Sertifikat Vaksin SATUSEHAT (FAKE)", category:"Umum", description:"mulai dari dosis 1/2/3/4/5", base_price:25000, duration_estimate:"1 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Sertifikat+Vaksin" },
+  { id:2, name:"Paket Pro (Include Hosting + domain bisa milih)", category:"Umum", description:"20GB Storage & 2 mailbox per website gratis selama 1 tahun, gratis domain 1 tahun, Email bisnis 10GB Storage, detail fitur selengkap nya boleh dm", base_price:200000, duration_estimate:"4-7 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Website+Builder" },
+  { id:3, name:"Paket Hemat (hosting + domain template)", category:"Umum", description:"hosting dan domain free seumur hidup (kalau mau ubah domain template jadi domain sendiri kena extra charge)", base_price:550000, duration_estimate:"2-3 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Website+Builder" },
+  { id:4, name:"Bikin baru SIM C Satlantas depok", category:"Umum", description:"pembayaran dan dokumen yang diperlukan dibawa pada saat bertemu di satlantas depok", base_price:850000, duration_estimate:"1-2 jam", image_url:"https://placehold.co/400x200/2563EB/white?text=SIM C" },
+  { id:5, name:"Bikin baru SIM A Satlantas depok", category:"Umum", description:"pembayaran dan dokumen yang diperlukan dibawa pada saat bertemu di satlantas depok", base_price:950000, duration_estimate:"1-2 jam", image_url:"https://placehold.co/400x200/2563EB/white?text=SIM A" },
+  { id:6, name:"Jurnal Kampus (Full Bab)", category:"Akademik", description:"Penulisan lengkap jurnal akademik siap publikasi di jurnal kampus", base_price:350000, duration_estimate:"2-3 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Jurnal+Kampus" },
+  { id:7, name:"Pembuatan Makalah & Artikel", category:"Akademik", description:"Rp3.000/halaman. Opsi: hanya setor judul & topik (+Rp25.000)", base_price:3000, duration_estimate:"1-3 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Makalah+Artikel"  },
+  { id:8, name:"Design PowerPoint Grafis", category:"Akademik", description:"Rp3.000/slide. Opsi: hanya setor judul & topik (+Rp15.000)", base_price:3000, duration_estimate:"1-2 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=PPT+Grafis" },
+  { id:9, name:"Laporan Kerja Lapangan", category:"Akademik", description:"Penulisan lengkap laporan praktik kerja lapangan/industri", base_price:250000, duration_estimate:"1-2 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Laporan+KL" },
+  { id:10, name:"Analisis Data SPSS", category:"Akademik", description:"Pengolahan dan analisis data menggunakan software SPSS", base_price:75000, duration_estimate:"1-2 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Analisis+Data" },
+  { id:11, name:"Pembuatan Lamaran Digital", category:"Akademik", description:"Desain lamaran kerja digital interaktif untuk portofolio", base_price:15000, duration_estimate:"1 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=Lamaran+Digital" },
+   { id:12, name:"Pembuatan Skripsi (Bab 1-3)", category:"Tugas Akhir", description:"Penulisan bab pendahuluan, landasan teori, dan metodologi, terima jadi (data penelitian/lapangan dari cust)", base_price:850000, duration_estimate:"1-2 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Skripsi+Bab 1-3" },
+   { id:13, name:"Pembuatan Skripsi (Bab 4-5)", category:"Tugas Akhir", description:"Penulisan bab hasil analisis dan kesimpulan, terima jadi (data penelitian/lapangan dari cust)", base_price:900000, duration_estimate:"2 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Skripsi+Bab 4-5" },
+  { id:14, name:"Skripsi Full Package", category:"Tugas Akhir", description:"Full bab + analisis data + data penelitian/lapangan (hanya serahin judul) tinggal duduk santai. Revisi 2x gratis.", base_price:3500000, duration_estimate:"4-6 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Skripsi+Full" },
+  { id:15, name:"Pembuatan Tesis (Bab 1-3)", category:"Tugas Akhir", description:"Penulisan bab pendahuluan, landasan teoritis dll, dan metodologi (data penelitian/lapangan dari cust)", base_price:750000, duration_estimate:"1-2 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Tesis+Bab 1-3" },
+  { id:16, name:"Pembuatan Tesis (Bab 4-5)", category:"Tugas Akhir", description:"Penulisan bab hasil analisis dan kesimpulan (data penelitian/lapangan dari cust)", base_price:650000, duration_estimate:"3 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Tesis+Bab 4-5" },
+  { id:17, name:"Tesis Full Package", category:"Tugas Akhir", description:"Full bab + analisis data + mix method + media (web statis/aplikasi via expo) + data lapangan, tinggal duduk santai, Revisi 2x gratis.", base_price:4500000, duration_estimate:"8-12 minggu", image_url:"https://placehold.co/400x200/2563EB/white?text=Tesis+Full" },
+  { id:18, name:"Bimbingan Tesis", category:"Tugas Akhir", description:"Pendampingan penuh dalam pengerjaan tesis dari proposal hingga sidang", base_price:0, duration_estimate:"Sesuai kebutuhan", image_url:"https://placehold.co/400x200/2563EB/white?text=Bimbingan+Tesis" },
+  { id:19, name:"Design CV ATS Friendly", category:"Karir", description:"CV profesional yang lolos sistem ATS (Applicant Tracking System)", base_price:35000, duration_estimate:"1 hari", image_url:"https://placehold.co/400x200/2563EB/white?text=CV+Premium" },
+  { id:20, name:"Pembuatan Aplikasi Android/iOS via expo (tidak upload playstore)", category:"Karir", description:"Pengembangan aplikasi mobile menggunakan Expo (belum rilis PlayStore/App Store). Harga negosiasi.", base_price:0, duration_estimate:"Diskusi", image_url:"https://placehold.co/400x200/2563EB/white?text=Aplikasi+Mobile" }
+
 ];
 
 const testimonials = [
